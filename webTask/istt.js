@@ -1,6 +1,5 @@
 var parallel    = require('async').parallel;
 var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
 var https = require('https');
 var request = require('request');
 
@@ -15,7 +14,7 @@ var findTrackingKey = function(db, data, callback) {
 };
 
 var options = {
-  method: 'POST',
+  method: "POST",
   body: {},
   json: true,
   url: ""
@@ -59,7 +58,7 @@ module.exports = function (ctx, done) {
 							}
 						});						
 					} else {
-						db.close()
+						db.close();
 						return done(null, "SUCCESS - No call needed");
 					}
 				}
