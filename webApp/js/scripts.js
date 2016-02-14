@@ -35,3 +35,10 @@ $('#shippoForm').submit(function(event){
 	});
 
 });
+
+$('.nextStep').on('click', function(e){    
+    var section = $(this).parents('.current');
+    section.removeClass('current').hide();
+    section.next('.step').addClass('current');
+    e.preventDefault();
+});

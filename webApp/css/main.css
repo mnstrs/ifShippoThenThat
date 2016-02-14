@@ -161,17 +161,29 @@ textarea {
     margin: 0 auto;
     z-index: 100;
     visibility: hidden;
+    pointer-events: none;
     height: 0;
-    -webkit-transition: visibility 0s 0.4s, height 0s 0.4s;
-    transition: visibility 0s 0.4s, height 0s 0.4s;
+    opacity: 0;
+    -webkit-transition: opacity 0s 0.4s;
+    transition: opacity 0.4s;
     text-align: center;
     -webkit-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     -o-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    
+    transform: translateX(-50%) translateY(-50%); 
 }
+.step.current{
+	visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+	height: auto;
+    max-width: 1280px;
+    min-width: 750px;
+	-webkit-animation: moveUpFromRight 0.4s both;
+	animation: moveUpFromRight 0.4s both;
+}
+
 
 strong{
     display: block;
@@ -190,14 +202,6 @@ a{
 }
 
 
-.step.current{
-	visibility: visible;
-	height: auto;
-    max-width: 1280px;
-    min-width: 750px;
-    -webkit-transition: none;
-	transition: none;
-}
 
 button,
 .step input{
@@ -225,6 +229,22 @@ button{
     font-weight: bolder;
     line-height: 1em;
 }
+
+.questions li {
+	z-index: 100;
+	position: relative;
+	visibility: hidden;
+	height: 0;
+	-webkit-transition: visibility 0s 0.4s, height 0s 0.4s;
+	transition: visibility 0s 0.4s, height 0s 0.4s;
+}
+
+@keyframes moveUpFromRight {
+	from { opacity: 0;  -webkit-transform:  translateX(100%) translateY(-50%); transform: translateX(100%) translateY(-50%); }
+	to { opacity: 1;  -webkit-transform:  translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%);}
+}
+
+
 .options {
     margin: 2em 0;
 }
