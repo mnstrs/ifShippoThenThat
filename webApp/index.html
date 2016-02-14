@@ -12,7 +12,15 @@
 		<input type="text" id="tracking">
 		<label>Carrier:</label>
 		<input type="text" id="carrier">
-		<input type="submit" value="submit">	
+		<p>You can choose when do you want to get a notification.<br> 
+If it is whenever the status of the item has changed, choose Track Updated. <br>
+If only when the item is delivered, choose Track Delivered</p>
+		<label>Type of Event:</label>
+		<select id="event">
+			<option value="track_updated" selected>Track Updated</option>
+			<option value="track_delivered" selected>Track Delivered</option>
+		</select>
+		<input type="submit" value="submit">
 	</form>
 <script src="js/jquery.min.js"></script>
 <script src ="js/scripts.js"> </script>

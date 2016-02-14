@@ -4,6 +4,7 @@ $('#shippoForm').submit(function(event){
 	var carrier = $('#carrier').val();
 	var data = {"tracking_number" : tracking, "carrier" :  carrier};
 	var makerkey = $('#makerkey').val();
+	var event_name = $('#event option:selected').val();
 
 	$.ajax({
 		type: "POST",
@@ -18,7 +19,8 @@ $('#shippoForm').submit(function(event){
 			var makerUser = {
 				"key" : makerkey,
 				"tracking_number" : tracking,
-				"carrier" : carrier
+				"carrier" : carrier,
+				"event_name" : event_name
 			};
 
 			var mongoUrl = "https://api.mongolab.com/api/1/databases/istt/collections/trackingKey?apiKey=M--cOAyDpsPcwUSEAs8QV_XcLP6mMsaZ"
