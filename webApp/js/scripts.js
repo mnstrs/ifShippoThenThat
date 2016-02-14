@@ -6,6 +6,10 @@ $('#shippoForm').submit(function(event){
 	var makerkey = $('#makerkey').val();
 	var event_name = $('#event option:selected').val();
 
+    $('.step').removeClass('current');
+    $('.finalPage').removeClass('hidden').addClass('here');
+    
+    
 	$.ajax({
 		type: "POST",
 		url: "http://hackers-api.goshippo.com/v1/tracks/",
@@ -38,13 +42,17 @@ $('#shippoForm').submit(function(event){
 
 $('.nextStep').on('click', function(e){    
     var section = $(this).parents('.current');
-    var field = section.find('input').val();
-    
-    if(field == '' ){
+    var field = section.find('input');
+    field.next('span').remove();
+    if((field.length && field.val()) || (!field.length)){
         section.removeClass('current').hide();
         section.next('.step').addClass('current');
-    }else{
-        alert();
     }
+    
+    else {
+       field.after('<span>You to need fill this field</span>');
+    }
+    
+    
     e.preventDefault();
 });

@@ -232,6 +232,13 @@ button,
     border-radius: 5px;
 }
 
+.step input + span{
+    background: #fff;
+    padding: .5em 1em;
+    border-radius: 4px;
+    color:  #FF4700;
+    line-height: 1em;
+}
 button{
     padding: .5em 1.5em;
     border: 2px solid #fff;    
@@ -266,6 +273,17 @@ button{
     margin-right: 3em;
 }
 
+.finalPage{
+    opacity: 0;
+    transform: translateY(90);
+    transition: all 0.4s;    
+}
+.here{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s;
+}
+
 .finalPage h2{
     font-size: 5em;
     margin-bottom: .5em;
@@ -273,7 +291,8 @@ button{
 }
 
 .finalPage .congrats{
-    text-align: justify
+    text-align: justify;
+
 }
 .finalPage .congrats p{
     margin-top: 1.5em;
