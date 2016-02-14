@@ -38,7 +38,13 @@ $('#shippoForm').submit(function(event){
 
 $('.nextStep').on('click', function(e){    
     var section = $(this).parents('.current');
-    section.removeClass('current').hide();
-    section.next('.step').addClass('current');
+    var field = section.find('input').val();
+    
+    if(field == '' ){
+        section.removeClass('current').hide();
+        section.next('.step').addClass('current');
+    }else{
+        alert();
+    }
     e.preventDefault();
 });
