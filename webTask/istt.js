@@ -5,7 +5,7 @@ var https = require('https');
 var request = require('request');
 
 var findTrackingKey = function(db, data, callback) {
-	db.collection('trackingKey').findOne({
+	db.collection('trackingKey').find({
 		tracking_number : data.tracking_number,
 		carrier: data.carrier
 	}, function(err, result) {
@@ -40,24 +40,30 @@ module.exports = function (ctx, done) {
 	MongoClient.connect(mongoUrl, function(err, db) {
 		if(err) return done(err);
 
-		findTrackingKey(db, ctx.data, function(result) {
-
-			options.url = "https://maker.ifttt.com/trigger/track_updated/with/key/"+result.key;
+		findTrackingKey(db, ctx.data, function(results) {
 			options.body =	{	value1 : ctx.data.tracking_number,
-								value2 : ctx.data.tracking_status.status_details,
-								value3 : ctx.data.tracking_status.location.city 
-							};
+				value2 : ctx.data.tracking_status.status_details,
+				value3 : ctx.data.tracking_status.location.city 
+			};
 
-			callMaker(function(response){
-				if (response.statusCode == 200){
-					return done(null, 'Success.');
-				} else {
-					return done(response);
+			results.each(function(err, trackingKey){
+				if (err) return done(err);
+				if (trackingKey!=null){
+					options.url = "https://maker.ifttt.com/trigger/"+ trackingKey.event_name +"/with/key/"+trackingKey.key;
+					if (trackingKey.event_name == "track_updated" || (trackingKey.event_name == "track_delivered" && ctx.data.tracking_status.status == "DELIVERED")){
+						callMaker(function(response){
+							if (response.statusCode == 200){
+								return done(null, 'SUCCESS - Maker Called');
+							} else {
+								return done(response);
+							}
+						});						
+					} else {
+						db.close()
+						return done(null, "SUCCESS - No call needed");
+					}
 				}
-			});
-
-			console.log(result);
-			db.close();
+			})
   		});
 
 
