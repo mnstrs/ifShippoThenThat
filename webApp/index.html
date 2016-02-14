@@ -11,7 +11,22 @@
 		<label>Tracking Number:</label>
 		<input type="text" id="tracking">
 		<label>Carrier:</label>
-		<input type="text" id="carrier">
+		<select id="carrier">
+			<option value=" " selected>Select Carrier</option>
+			<option value="usps" >USPS</option>
+			<option value="fedex">FedEx</option>
+			<option value="ups" >UPS</option>
+			<option value="dhl_express">DHL Express</option>
+			<option value="canada_post" >Canada Post</option>
+			<option value="dhl_germany">DHL Germany</option>
+			<option value="gls_fr" >GLS France</option>
+			<option value="gls_de" >GLS Germany</option>
+			<option value="modialrelay">Mondial Relay</option>
+			<option value="parcel2go">Parcel2Go</option>
+			<option value="lasership">Laser Ship</option>
+			<option value="ontrac">OnTrac</option>
+			<option value="australia_post">Australia Post</option>
+		</select>
 		<p>You can choose when do you want to get a notification.<br> 
 If it is whenever the status of the item has changed, choose Track Updated. <br>
 If only when the item is delivered, choose Track Delivered</p>

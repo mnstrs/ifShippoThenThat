@@ -1,7 +1,7 @@
 $('#shippoForm').submit(function(event){
 	event.preventDefault();
 	var tracking = $('#tracking').val();
-	var carrier = $('#carrier').val();
+	var carrier = $('#carrier option:selected').val();
 	var data = {"tracking_number" : tracking, "carrier" :  carrier};
 	var makerkey = $('#makerkey').val();
 	var event_name = $('#event option:selected').val();
