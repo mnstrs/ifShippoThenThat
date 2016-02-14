@@ -9,3 +9,9 @@ Once it's set up you can create any Recipe you want in IFTTT using the Maker Cha
 
 Our solution is composed by a web application and a node.js [WebTask](https://webtask.io/) REST Service. Both access a mongo database to get user data.
 
+Creators: 
+Adolfo Schneider – adolfosrs@gmail.com
+Tais Bellini – tais38@gmail.com
+Thom Morais - thommorais@gmail.com
+
+
