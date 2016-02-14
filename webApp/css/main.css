@@ -230,6 +230,7 @@ button,
     padding: .5em;    
     text-align: left;
     border-radius: 5px;
+    color: #3D4650;
 }
 
 .step input + span{
