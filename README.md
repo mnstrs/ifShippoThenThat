@@ -7,5 +7,11 @@ Make sure you visit the web application ([ISTT.vai.la](http://istt.vai.la)) to s
 
 Once it's set up you can create any Recipe you want in IFTTT using the Maker Channel as Trigger. Just make sure the event name is the same you set up in ISTT.
 
-Our solution is composed by a web application and a node.js [WebTask](https://webtask.io/) REST Service.
+Our solution is composed by a web application and a node.js [WebTask](https://webtask.io/) REST Service. Both access a mongo database to get user data.
+
+Creators: 
+Adolfo Schneider – adolfosrs@gmail.com
+Tais Bellini – tais38@gmail.com
+Thom Morais - thommorais@gmail.com
+
 
