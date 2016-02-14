@@ -16,8 +16,8 @@ $('#shippoForm').submit(function(event){
 		data: JSON.stringify(data),
 		success: function(response){
 			var makerUser = {
-				key = makerkey,
-				tracking_number = tracking
+				"key" : makerkey,
+				"tracking_number" : tracking
 			};
 
 			var mongoUrl = "https://api.mongolab.com/api/1/databases/ds059375/collections/trackingKey?apiKey=M--cOAyDpsPcwUSEAs8QV_XcLP6mMsaZ"
