@@ -17,39 +17,44 @@
             <button type="button" class="nextStep">I already have one</button>
         </section>
         
-        <section class="step makerChannel current">
-            <h2>Provide your Maker Channel Key: </h2>
+        <section class="step makerChannel">
+            <h2>Provide your Maker Channel Key</h2>
             <strong>provide us the key you can find <a href="https://ifttt.com/maker" target="_blank">here</a></strong>
             <input type="text" id="makerkey">
             <button type="button" class="nextStep">yeap!</button>
 		</section>
 		
-		<section class="step trackingNumber">
-            <label>Tracking Number:</label>
+		<section class="step trackingNumber current">
+            <h2>Tracking Number</h2>
             <input type="text" id="tracking">
-            <label>Carrier:</label>
-            <select id="carrier">
-                <option selected>Select Carrier</option>
-                <option value="usps" >USPS</option>
-                <option value="fedex">FedEx</option>
-                <option value="ups" >UPS</option>
-                <option value="dhl_express">DHL Express</option>
-                <option value="canada_post" >Canada Post</option>
-                <option value="dhl_germany">DHL Germany</option>
-                <option value="gls_fr" >GLS France</option>
-                <option value="gls_de" >GLS Germany</option>
-                <option value="modialrelay">Mondial Relay</option>
-                <option value="parcel2go">Parcel2Go</option>
-                <option value="lasership">Laser Ship</option>
-                <option value="ontrac">OnTrac</option>
-                <option value="australia_post">Australia Post</option>
-            </select>
-            
-            <label>Type of Event:</label>
-            <select id="event">
-                <option value="track_updated" selected>Track Updated</option>
-                <option value="track_delivered">Track Delivered</option>
-            </select>
+            <div class="options">
+               <div>
+                    <label>Carrier:</label>
+                    <select id="carrier">
+                        <option selected>Select Carrier</option>
+                        <option value="usps" >USPS</option>
+                        <option value="fedex">FedEx</option>
+                        <option value="ups" >UPS</option>
+                        <option value="dhl_express">DHL Express</option>
+                        <option value="canada_post" >Canada Post</option>
+                        <option value="dhl_germany">DHL Germany</option>
+                        <option value="gls_fr" >GLS France</option>
+                        <option value="gls_de" >GLS Germany</option>
+                        <option value="modialrelay">Mondial Relay</option>
+                        <option value="parcel2go">Parcel2Go</option>
+                        <option value="lasership">Laser Ship</option>
+                        <option value="ontrac">OnTrac</option>
+                        <option value="australia_post">Australia Post</option>
+                    </select>
+                   </div>
+               <div>
+                    <label>Type of Event:</label>
+                    <select id="event">
+                        <option value="track_updated" selected>Track Updated</option>
+                        <option value="track_delivered">Track Delivered</option>
+                    </select>
+                </div>
+            </div>
             <button type="submit">Submit</button>         
 		</section>
 		

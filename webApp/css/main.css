@@ -203,20 +203,47 @@ button,
 .step input{
     margin: 2em auto 0;
     display: block;
-    padding: .5em 1.5em;
-    background: none;
-    border: 2px solid #fff;
+    background: #fff;
     border-radius: 30px;
     text-align: center;
     outline: none;
-    color: #fff;
 }
 
 .step input{
+    margin-bottom: 1em;
+    border:0;
     min-width: 80%;
-    text-align: center;
+    padding: .5em;    
+    text-align: left;
     border-radius: 5px;
 }
+
+button{
+    padding: .5em 1.5em;
+    border: 2px solid #fff;    
+    padding: .8em 1.5em;
+    font-weight: bolder;
+    line-height: 1em;
+}
+.options {
+    margin: 2em 0;
+}
+.options > div{
+    display: inline-block;
+}
+.options > div select{
+    width: 200px;
+}
+.options > div label{
+    display: block;
+    text-align: left;
+    font-weight: 100;    
+}
+
+.options > div:first-child{
+    margin-right: 3em;
+}
+
 
 .browserupgrade {
     margin: 0.2em 0;
