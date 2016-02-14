@@ -213,7 +213,6 @@ a{
 }
 
 
-
 button,
 .step input{
     margin: 2em auto 0;
@@ -269,11 +268,11 @@ button{
 
 .finalPage h2{
     font-size: 5em;
+    margin-bottom: .5em;
     text-align: center;
 }
 
 .finalPage .congrats{
-    margin-top: 2em;
     text-align: justify
 }
 .finalPage .congrats p{
@@ -286,4 +285,19 @@ button{
 }
 .enjoy{
     font-weight: 700
+}
+
+.recipes h4{
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.recipes a{
+    max-width: 300px;
+    display: inline-block;
+    border:0;
+}
+
+.hidden{
+    display: none;
 }
