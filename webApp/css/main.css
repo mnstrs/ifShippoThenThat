@@ -5,8 +5,8 @@ html {
 }
 body {
     margin: 0;
-    background: #93BF44;
-    color: #3D4650;
+    background: #3D4650;
+    color: #fff ;
 }
 article,
 aside,
@@ -149,6 +149,11 @@ textarea {
     resize: vertical;
 }
 
+.header img{
+    display: block;
+    margin: 2em auto 0;
+}
+
 .step h2{
     margin-bottom: 0;
     font-size: 3em;
@@ -228,6 +233,7 @@ button{
     padding: .8em 1.5em;
     font-weight: bolder;
     line-height: 1em;
+    color: #93BF44;
 }
 
 .questions li {

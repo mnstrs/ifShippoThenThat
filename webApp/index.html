@@ -9,10 +9,14 @@
 
 </head>
 <body>
+    
+    <header class="header">
+       <img src="css/logo.png" height="100" alt="If Shippo Then That"/>
+    </header>
+    
 	<form action="/" name="shippoForm" id="shippoForm" >
-        
         <section class="step intro current">
-            <h2>You just need an account on IFTT</h2> 
+            <h2>You just need an account on IFTTT</h2> 
             <strong>if you don’t have create one <a href="https://ifttt.com/join" target="_blank">here</a></strong>
             <button type="button" class="nextStep">I already have one</button>
         </section>
@@ -57,9 +61,19 @@
             </div>
             <button type="submit">Submit</button>         
 		</section>
-		
-		
 	</form>
+   
+    <section class="finalPage hidden">
+        <h2>Great!</h2>
+             <p>Now you can create any Recipe in IFTTT using the Maker Channel as the THIS part. Just make sure the Event Name is either exactly "track_updated" or "track_delivered", and that it is the same event type as you chose in the previous page. 
+        </p>
+            <p>
+                Enjoy and never miss a delivered package again!     
+             </p>
+              <p>Here are some suggestions of recipe we created:</p>
+              
+    </section>   
+   
     <script src="js/jquery.min.js"></script>
     <script src ="js/scripts.js"> </script>
 </body>
