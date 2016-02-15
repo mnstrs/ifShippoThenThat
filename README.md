@@ -14,7 +14,9 @@ Our solution is composed by a web application and a node.js [WebTask](https://we
 Creators:
 
 [Adolfo Schneider](http://stackoverflow.com/users/1736127/adolfosrs) – adolfosrs@gmail.com
+
 Tais Bellini – tais38@gmail.com
+
 Thom Morais - thommorais@gmail.com
 
 
