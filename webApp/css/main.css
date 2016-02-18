@@ -14,16 +14,36 @@ html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     overflow-x: hidden;
-    transform: scale3d(1.01,1.01,1);  
-    opacity: 0
 }
-html.loaded{
-    -moz-animation:contrai 0.4s cubic-bezier(0.6, 0, 0.4, 1) forwards;
-    -webkit-animation:contrai 0.4s cubic-bezier(0.6, 0, 0.4, 1) forwards;
-    animation:contrai 0.4s cubic-bezier(0.6, 0, 0.4, 1) forwards;
-    overflow-x: hidden;
-}
+@media only screen and (min-width: 1030px) {
+    html.loading{
+        position: absolute;
+        width: 100%;
+        -webkit-mask: url("transition.png");
+        -moz-mask: url("transition.png");
+        -ms-mask: url("transition.png");
+        -o-mask: url("transition.png");
+        mask: url("transition.png");
+        -webkit-mask-size: 1300% 100%;
+        -moz-mask-size: 1300% 100%;
+        -ms-mask-size: 1300% 100%;
+        -o-mask-size: 1300% 100%;
+        mask-size: 1300% 100%;
+        -webkit-mask-position: 0 0;
+        -moz-mask-position: 0 0;
+        -ms-mask-position: 0 0;
+        -o-mask-position: 0 0;
+        mask-position: 0 0;
+        -webkit-animation: mask-play .8s steps(12) 0s both;
+        animation: mask-play .8s steps(12) 0s both;
+    }
 
+      html.loaded {
+        position: relative;
+        -webkit-animation: none;
+        animation: none;
+      }
+}
 body {
     position: relative;
     height: 100%;
@@ -319,20 +339,45 @@ button{
 } 
 
 
-@-webkit-keyframes contrai {
-	0% { -webkit-transform: scale3d(1.01,1.01,1); opacity: 0}
-	100% { -webkit-transform: scale3d(1,1,1); opacity: 1}
+
+
+@-webkit-keyframes mask-play {
+  from {
+    -webkit-mask-position: 0 0;
+    -moz-mask-position: 0 0;
+    -ms-mask-position: 0 0;
+    -o-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    -moz-mask-position: 100% 0;
+    -ms-mask-position: 100% 0;
+    -o-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
 }
 
-@-moz-keyframes contrai {
-	0% { -moz-transform: scale3d(1.01,1.01,1); opacity: 0}
-	100% { -moz-transform: scale3d(1,1,1); opacity: 1}
+@keyframes mask-play {
+  from {
+    -webkit-mask-position: 0 0;
+    -moz-mask-position: 0 0;
+    -ms-mask-position: 0 0;
+    -o-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    -moz-mask-position: 100% 0;
+    -ms-mask-position: 100% 0;
+    -o-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
 }
 
-@keyframes contrai {
-	0% { transform: scale3d(1.01,1.01,1); opacity: 0}
-	100% { transform: scale3d(1,1,1); opacity: 1}
-}
+
 
 .options {
     margin: 2em 0;

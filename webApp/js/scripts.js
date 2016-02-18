@@ -61,5 +61,5 @@ $('.nextStep').on('click', function(e){
 });
 
 setTimeout(function(){
-  $('html').addClass('loaded');
-}, 300);
+  $('html').removeClass('loading').addClass('loaded');
+}, 1200);
