@@ -41,11 +41,14 @@ $('#shippoForm').submit(function(event){
 });
 
 $('.nextStep').on('click', function(e){    
+    
     var section = $(this).parents('.current');
     var field = section.find('input');
+    
     field.next('span').remove();
+    
     if((field.length && field.val()) || (!field.length)){
-        section.removeClass('current').hide();
+        section.removeClass('current').addClass('gone');
         section.next('.step').addClass('current');
     }
     
@@ -56,3 +59,7 @@ $('.nextStep').on('click', function(e){
     
     e.preventDefault();
 });
+
+setTimeout(function(){
+  $('html').addClass('loaded');
+}, 300);

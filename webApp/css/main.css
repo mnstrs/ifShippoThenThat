@@ -1,9 +1,32 @@
+html * {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-smooth: always;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
 html {
+    height: 100%;
     font-family: 'Hind', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    transform: scale3d(1.01,1.01,1);  
+    opacity: 0
 }
+html.loaded{
+    -moz-animation:contrai 0.4s cubic-bezier(0.6, 0, 0.4, 1) forwards;
+    -webkit-animation:contrai 0.4s cubic-bezier(0.6, 0, 0.4, 1) forwards;
+    animation:contrai 0.4s cubic-bezier(0.6, 0, 0.4, 1) forwards;
+    overflow-x: hidden;
+}
+
 body {
+    position: relative;
+    height: 100%;
     margin: 0;
     background: #3D4650;
     color: #fff ;
@@ -154,6 +177,16 @@ textarea {
     margin: 2em auto 0;
 }
 
+.tuto{
+    position: absolute;
+    padding: .5em 1em;
+    right: 30px;
+    top: 30px;
+    line-height: 1.2em;
+    border: 2px solid;
+    border-radius: 50px;    
+    font-size: .8em;    
+}
 .step h2{
     margin-bottom: 0;
     font-size: 3em;
@@ -167,16 +200,23 @@ textarea {
     z-index: 100;
     visibility: hidden;
     pointer-events: none;
-    height: 0;
+    min-height: 400.5px;
     opacity: 0;
     -webkit-transition: opacity 0s 0.4s;
     transition: opacity 0.4s;
     text-align: center;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%); 
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0); 
+    -ms-transform: translate3d(-50%, -50%, 0); 
+    -o-transform: translate3d(-50%, -50%, 0); 
+    transform: translate3d(-50%, -50%, 0);
+    
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
 }
 .congrats{
     max-width: 720px;
@@ -195,7 +235,12 @@ textarea {
 	animation: moveUpFromRight 0.4s both;
 }
 
-
+.step.gone{
+    visibility: visible;
+    opacity: 1;
+	-webkit-animation:  moveUpToleft 0.4s both;
+	animation:  moveUpToleft 0.4s both;
+}
 strong{
     display: block;
     text-align: center;
@@ -250,10 +295,44 @@ button{
 }
 
 @keyframes moveUpFromRight {
-	from { opacity: 0;  -webkit-transform:  translateX(100%) translateY(-50%); transform: translateX(100%) translateY(-50%); }
-	to { opacity: 1;  -webkit-transform:  translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%);}
+	from { 
+        -webkit-transform:  translateX(100%) translateY(-50% ) scale3d(1.2,1.2,1) ; 
+        transform: translateX(100%) translateY(-50%) scaleX(1.3) scale3d(1.2,1.2,1) ;
+        opacity: 0;  
+       }
+	to {
+        -webkit-transform:  translateX(-50%)  translateY(-50%) scale3d(1,1,1); 
+        transform: translateX(-50%) translateY(-50%) scaleX(1) scale3d(1,1,1);  
+        opacity: 1
+    }
 }
 
+@keyframes moveUpToleft {
+	from { 
+        opacity: 1;  
+        -webkit-transform:  translateX(-50%) translateY(-50%) scale3d(1,1,1); 
+        transform: translateX(-50%) translateY(-50%) scale3d(1,1,1); }
+	to { 
+        opacity: 0;  
+        -webkit-transform:  translateX(-140%) translateY(-50%) scale3d(1.01,1.01,1); 
+        transform: translateX(-140%) translateY(-50%) scale3d(1.01,1.01,1);}
+} 
+
+
+@-webkit-keyframes contrai {
+	0% { -webkit-transform: scale3d(1.01,1.01,1); opacity: 0}
+	100% { -webkit-transform: scale3d(1,1,1); opacity: 1}
+}
+
+@-moz-keyframes contrai {
+	0% { -moz-transform: scale3d(1.01,1.01,1); opacity: 0}
+	100% { -moz-transform: scale3d(1,1,1); opacity: 1}
+}
+
+@keyframes contrai {
+	0% { transform: scale3d(1.01,1.01,1); opacity: 0}
+	100% { transform: scale3d(1,1,1); opacity: 1}
+}
 
 .options {
     margin: 2em 0;
@@ -290,10 +369,17 @@ button{
     margin-bottom: .5em;
     text-align: center;
 }
-
+.finalPage b{
+    font-weight: 600
+}
 .finalPage .congrats{
     text-align: justify;
-
+}
+.inline-link{
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid;
+    line-height: 1em;
 }
 .finalPage .congrats p{
     margin-top: 1.5em;
