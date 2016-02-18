@@ -48,7 +48,7 @@ $('.nextStep').on('click', function(e){
     field.next('span').remove();
     
     if((field.length && field.val()) || (!field.length)){
-        section.removeClass('current').addClass('gone');
+        section.removeClass('comeBack current').addClass('gone');
         section.next('.step').addClass('current');
     }
     
@@ -57,6 +57,13 @@ $('.nextStep').on('click', function(e){
     }
     
     
+    
+});
+
+$('.buttonGoBack').on('click', function(e){   
+     var section = $(this).parents('.current');
+         section.removeClass('comeBack current');
+         section.prev('.step').removeClass('gone').addClass('comeBack current');
     e.preventDefault();
 });
 

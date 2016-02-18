@@ -1,59 +1,70 @@
 <!DOCTYPE HTML>
 <html class="loading">
+
 <head>
-	<meta charset="UTF-8">
-	<title>If Shippo Then That!</title>
-	
-    <link href='https://fonts.googleapis.com/css?family=Hind:400,500,600,700,300' rel='stylesheet' type='text/css'>	
-    <link href='css/main.css' rel='stylesheet' type='text/css'>	
+    <meta charset="UTF-8">
+    <title>If Shippo Then That!</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Hind:400,500,600,700,300' rel='stylesheet' type='text/css'>
+    <link href='css/main.css' rel='stylesheet' type='text/css'>
 
 </head>
+
 <body>
-    
+
     <header class="header">
-       <img src="css/logo.png" height="100" alt="If Shippo Then That"/>
-       
-       <a href="tutorial.pdf" target="_blank" class="tuto">Creating your own recipe</a>
+        <img src="css/logo.png" height="100" alt="If Shippo Then That" />
+
+        <a href="tutorial.pdf" target="_blank" class="tuto">Creating your own recipe</a>
     </header>
-    
-	<form action="/" name="shippoForm" id="shippoForm" >
+
+    <form action="/" name="shippoForm" id="shippoForm">
         <section class="step intro current">
-            <h2>You will need an account on IFTTT</h2> 
+            <h2>You will need an account on IFTTT</h2>
             <strong>if you don’t have create one <a href="https://ifttt.com/join" target="_blank">here</a></strong>
+
             <button type="button" class="nextStep">I already have one</button>
         </section>
-        
+
         <section class="step makerChannel">
             <h2>Provide your Maker Channel Key</h2>
             <strong>you can find it <a href="https://ifttt.com/maker" target="_blank">here</a></strong>
             <input type="text" id="makerkey">
+            <button type="button" class="buttonGoBack">
+                <svg width="19px" height="15px" viewBox="0 0 19 15" version="1.1">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                        <path d="M18.84,10.26 L18.84,4.54 L8.38,4.54 L8.38,0.06 L0.9,7.4 L8.38,14.74 L8.38,10.26 L18.84,10.26 Z" id="⬅︎" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                    </g>
+                </svg>
+                go back
+            </button>
             <button type="button" class="nextStep">yeap!</button>
-		</section>
-		
-		<section class="step trackingNumber ">
+        </section>
+
+        <section class="step trackingNumber ">
             <h2>Tracking Number</h2>
             <input type="text" id="tracking">
             <div class="options">
-               <div>
+                <div>
                     <label>Carrier:</label>
                     <select id="carrier">
                         <option selected>Select Carrier</option>
-                        <option value="usps" >USPS</option>
+                        <option value="usps">USPS</option>
                         <option value="fedex">FedEx</option>
-                        <option value="ups" >UPS</option>
+                        <option value="ups">UPS</option>
                         <option value="dhl_express">DHL Express</option>
-                        <option value="canada_post" >Canada Post</option>
+                        <option value="canada_post">Canada Post</option>
                         <option value="dhl_germany">DHL Germany</option>
-                        <option value="gls_fr" >GLS France</option>
-                        <option value="gls_de" >GLS Germany</option>
+                        <option value="gls_fr">GLS France</option>
+                        <option value="gls_de">GLS Germany</option>
                         <option value="modialrelay">Mondial Relay</option>
                         <option value="parcel2go">Parcel2Go</option>
                         <option value="lasership">Laser Ship</option>
                         <option value="ontrac">OnTrac</option>
                         <option value="australia_post">Australia Post</option>
                     </select>
-                   </div>
-               <div>
+                </div>
+                <div>
                     <label>Type of Event:</label>
                     <select id="event">
                         <option value="track_updated" selected>Track Updated</option>
@@ -61,40 +72,50 @@
                     </select>
                 </div>
             </div>
-            <button type="submit">Submit</button>         
-		</section>
-	</form>
-   
+            <button type="button" class="buttonGoBack">
+                <svg width="19px" height="15px" viewBox="0 0 19 15" version="1.1">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                        <path d="M18.84,10.26 L18.84,4.54 L8.38,4.54 L8.38,0.06 L0.9,7.4 L8.38,14.74 L8.38,10.26 L18.84,10.26 Z" id="⬅︎" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                    </g>
+                </svg>
+                go back
+            </button>
+            <button type="submit">Submit</button>
+        </section>
+    </form>
+
     <section class="finalPage hidden">
         <h2>Great!</h2>
-            <div class="congrats">
-             <p>Now you can create any Recipe in IFTTT using the Maker Channel as the THIS part. Just make sure the Event Name is either exactly "track_updated" or "track_delivered", and that it is the same event type as you chose in the previous page. 
-        </p>
-               <p><b>Make sure to take a look at <a href="tutorial.pdf" target="_blank" class="inline-link">our tutorial</a> if you have any doubts</b></p>
-             <p class="enjoy">
-                Enjoy and never miss a delivered package again!     
-             </p>
-            
-               
-                <div class="recipes">
-                <h4>Here are some suggestions of recipe we created</h4> 
-                
-                 <a href="https://ifttt.com/view_embed_recipe/384912-if-shippo-then-gmail" target = "_blank" class="embed_recipe embed_recipe-l_20" id= "embed_recipe-384912">
-                     <img src= 'https://ifttt.com/recipe_embed_img/384912' alt="IFTTT Recipe: If Shippo Then Gmail connects maker to gmail" width="320px" />
-                 </a>                
-                
-                <a href="https://ifttt.com/view_embed_recipe/384972-if-shippo-then-sms" target = "_blank" class="embed_recipe embed_recipe-l_18" id= "embed_recipe-384972">
-                     <img src= 'https://ifttt.com/recipe_embed_img/384972' alt="IFTTT Recipe: If Shippo Then SMS connects maker to sms" width="320px" />
-                </a>
-                 
+        <div class="congrats">
+            <p>Now you can create any Recipe in IFTTT using the Maker Channel as the THIS part. Just make sure the Event Name is either exactly "track_updated" or "track_delivered", and that it is the same event type as you chose in the previous page.
+            </p>
+            <p><b>Make sure to take a look at <a href="tutorial.pdf" target="_blank" class="inline-link">our tutorial</a> if you have any doubts</b>
+            </p>
+            <p class="enjoy">
+                Enjoy and never miss a delivered package again!
+            </p>
 
-              </div> 
-        </div>      
-    </section> 
-      
-    <script async type="text/javascript" src= "//ifttt.com/assets/embed_recipe.js"></script>
+
+            <div class="recipes">
+                <h4>Here are some suggestions of recipe we created</h4>
+
+                <a href="https://ifttt.com/view_embed_recipe/384912-if-shippo-then-gmail" target="_blank" class="embed_recipe embed_recipe-l_20" id="embed_recipe-384912">
+                    <img src='https://ifttt.com/recipe_embed_img/384912' alt="IFTTT Recipe: If Shippo Then Gmail connects maker to gmail" width="320px" />
+                </a>
+
+                <a href="https://ifttt.com/view_embed_recipe/384972-if-shippo-then-sms" target="_blank" class="embed_recipe embed_recipe-l_18" id="embed_recipe-384972">
+                    <img src='https://ifttt.com/recipe_embed_img/384972' alt="IFTTT Recipe: If Shippo Then SMS connects maker to sms" width="320px" />
+                </a>
+
+
+            </div>
+        </div>
+    </section>
+
+    <script async type="text/javascript" src="//ifttt.com/assets/embed_recipe.js"></script>
     <script src="js/jquery.min.js"></script>
-    <script src ="js/scripts.js"> </script>
+    <script src="js/scripts.js">
+    </script>
 </body>
 
 </html>

@@ -255,6 +255,17 @@ textarea {
 	animation: moveUpFromRight 0.4s both;
 }
 
+.step.comeBack{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    height: auto;
+    max-width: 1280px;
+    min-width: 750px;
+    -webkit-animation: moveUpFromLeft 0.4s both;
+    animation: moveUpFromLeft 0.4s both;
+}
+
 .step.gone{
     visibility: visible;
     opacity: 1;
@@ -306,13 +317,50 @@ button,
     line-height: 1em;
 }
 button{
+    display: inline-block;
     padding: .5em 1.5em;
     border: 2px solid #fff;    
     padding: .8em 1.5em;
     font-weight: bolder;
     line-height: 1em;
     color: #93BF44;
+    transition: all .2s ease-in;
 }
+.buttonGoBack{
+    margin-right: 2em;
+    border: 2px solid transparent;
+    background: transparent;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+.buttonGoBack:hover{
+    border-color: #fff;
+}
+.buttonGoBack svg{
+    display: inline-block;
+    height: 9px;
+    width: auto;
+    transition: all .2s ease-in;
+}
+.buttonGoBack:active svg{
+   transform: translateX(-4px)
+}
+
+
+@keyframes moveUpFromLeft {
+	from { 
+        opacity: 0;  
+        -webkit-transform:  translateX(-140%) translateY(-50%) scale3d(1.01,1.01,1); 
+        transform: translateX(-140%) translateY(-50%) scale3d(1.01,1.01,1);
+    }
+	to { 
+        opacity: 1;  
+        -webkit-transform:  translateX(-50%) translateY(-50%) scale3d(1,1,1); 
+        transform: translateX(-50%) translateY(-50%) scale3d(1,1,1); 
+    }
+} 
+
 
 @keyframes moveUpFromRight {
 	from { 
@@ -331,11 +379,13 @@ button{
 	from { 
         opacity: 1;  
         -webkit-transform:  translateX(-50%) translateY(-50%) scale3d(1,1,1); 
-        transform: translateX(-50%) translateY(-50%) scale3d(1,1,1); }
+        transform: translateX(-50%) translateY(-50%) scale3d(1,1,1); 
+    }
 	to { 
         opacity: 0;  
         -webkit-transform:  translateX(-140%) translateY(-50%) scale3d(1.01,1.01,1); 
-        transform: translateX(-140%) translateY(-50%) scale3d(1.01,1.01,1);}
+        transform: translateX(-140%) translateY(-50%) scale3d(1.01,1.01,1);
+    }
 } 
 
 
