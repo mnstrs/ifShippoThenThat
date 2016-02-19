@@ -18,7 +18,9 @@ html {
 @media only screen and (min-width: 1030px) {
     html.loading{
         position: absolute;
+        top: 0;
         width: 100%;
+        background: #92C139;
         -webkit-mask: url("transition.png");
         -moz-mask: url("transition.png");
         -ms-mask: url("transition.png");
@@ -34,8 +36,8 @@ html {
         -ms-mask-position: 0 0;
         -o-mask-position: 0 0;
         mask-position: 0 0;
-        -webkit-animation: mask-play .8s steps(12) 0s both;
-        animation: mask-play .8s steps(12) 0s both;
+        -webkit-animation: mask-play .6s steps(12) 0s both;
+        animation: mask-play .6s steps(12) 0s both;
     }
 
       html.loaded {
@@ -50,6 +52,7 @@ body {
     margin: 0;
     background: #3D4650;
     color: #fff ;
+    border: 1px solid transparent;
 }
 article,
 aside,
