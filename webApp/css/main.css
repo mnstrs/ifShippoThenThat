@@ -36,8 +36,8 @@ html {
         -ms-mask-position: 0 0;
         -o-mask-position: 0 0;
         mask-position: 0 0;
-        -webkit-animation: mask-play .6s steps(12) 0s both;
-        animation: mask-play .6s steps(12) 0s both;
+        -webkit-animation: mask-play .9s steps(12) 0s both;
+        animation: mask-play .9s steps(12) 0s both;
     }
 
       html.loaded {
