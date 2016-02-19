@@ -313,6 +313,8 @@ button,
 }
 
 .step input + span{
+    margin: 0 auto;
+    display: table
     background: #fff;
     padding: .5em 1em;
     border-radius: 4px;
